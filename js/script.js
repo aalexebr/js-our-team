@@ -30,7 +30,7 @@ const team = [
         img : 'barbara-ramos-graphic-designer.jpg',
     }
 ];
-
+console.log(team)
 const ul = document.createElement('ul');
 document.body.append(ul);
 
@@ -70,3 +70,21 @@ for(let i=0; i < team.length; i++){
         };
     };
 };
+
+const AddMember = document.getElementById('add-member')
+
+AddMember.addEventListener('submit',
+    function(event){
+        event.preventDefault();
+        const newName = document.getElementById('member-name').value
+        const newRole = document.getElementById('member-role').value
+        const newImg = document.getElementById('member-img').value
+        const newMember = {
+            name : newName,
+            role : newRole,
+            img : newImg,
+        };
+        team.push(newMember)
+        console.log('added',team)
+    }
+)
