@@ -36,14 +36,15 @@ for(let i=0; i < team.length; i++){
     // console.log(team[i])
     let teamMember = team[i]
     for(let key in teamMember){
-        // document.body.innerHTML += teamMember[key];
+
         let li = document.createElement('li');
-        li.innerHTML = `${key}: ${teamMember[key]}`;
         ul.append(li)
         if(key == 'img'){
+            li.innerHTML = `<img src="img/${teamMember[key]}">`;
             console.log(key,`<img src="img/${teamMember[key]}">`)
         }
         else{
+            li.innerHTML = `${key}: ${teamMember[key]}`;
             console.log(key,teamMember[key])
         }
     }
