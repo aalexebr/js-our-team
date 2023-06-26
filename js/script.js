@@ -35,6 +35,12 @@ for(let i=0; i < team.length; i++){
     // console.log(team[i])
     let teamMember = team[i]
     for(let key in teamMember){
-        console.log(key,teamMember[key])
+        
+        if(key == 'img'){
+            console.log(key,`<img src="img/${teamMember[key]}">`)
+        }
+        else{
+            console.log(key,teamMember[key])
+        }
     }
 }
