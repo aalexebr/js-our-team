@@ -29,23 +29,44 @@ const team = [
         role : 'Graphic Designer',
         img : 'barbara-ramos-graphic-designer.jpg',
     }
-]
+];
+
 const ul = document.createElement('ul');
-document.body.append(ul)
+document.body.append(ul);
+
+// let card = `<div class="card">
+//                 <div class="img"></div>
+//                 <h3 class="name"></h3>
+//                 <h4 class="role"></h4>
+//             </div>`;
+
 for(let i=0; i < team.length; i++){
     // console.log(team[i])
+    let card = `<div class="card">
+                    <div class="img"></div>
+                    <h3 class="name">${i}</h3>
+                    <h4 class="role"></h4>
+                 </div>`;
+    document.querySelector('.row').innerHTML += card
+    let allImg = document.querySelectorAll('.img')
+    let allName = document.querySelectorAll('.name')
+    let allRole = document.querySelectorAll('.role')
     let teamMember = team[i]
     for(let key in teamMember){
-
-        let li = document.createElement('li');
-        ul.append(li)
+        
+        // let li = document.createElement('li');
+        // ul.append(li);
+        console.log(key,teamMember[key])
         if(key == 'img'){
-            li.innerHTML = `<img src="img/${teamMember[key]}">`;
-            console.log(key,`<img src="img/${teamMember[key]}">`)
+            // li.innerHTML = `<img src="img/${teamMember[key]}">`; 
+            allImg[i].innerHTML = `<img src="img/${teamMember[key]}">`; 
         }
-        else{
-            li.innerHTML = `${key}: ${teamMember[key]}`;
-            console.log(key,teamMember[key])
+        else if(key == 'name'){
+            allName[i].innerHTML =  teamMember[key]
+            // li.innerHTML = `${key}: ${teamMember[key]}`;  
         }
-    }
-}
+        else if ( key == 'role'){
+            allRole[i].innerHTML = teamMember[key]
+        };
+    };
+};
