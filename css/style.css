@@ -30,6 +30,11 @@ body{
     text-align: center;
     color: rgb(76, 75, 75);
 }
+.card .img,
+.card h3,
+.card h4{
+    margin-bottom: 10px;
+}
 img{
     width: 100%;
     border-top-left-radius: 10px;
@@ -38,4 +43,12 @@ img{
 }
 input{
     display: block;
+}
+.form-row{
+    display: flex;
+    justify-content: center;
+    
+}
+form h3{
+    text-transform: uppercase;
 }
