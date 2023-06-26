@@ -30,12 +30,16 @@ const team = [
         img : 'barbara-ramos-graphic-designer.jpg',
     }
 ]
-
+const ul = document.createElement('ul');
+document.body.append(ul)
 for(let i=0; i < team.length; i++){
     // console.log(team[i])
     let teamMember = team[i]
     for(let key in teamMember){
-        
+        // document.body.innerHTML += teamMember[key];
+        let li = document.createElement('li');
+        li.innerHTML = `${key}: ${teamMember[key]}`;
+        ul.append(li)
         if(key == 'img'){
             console.log(key,`<img src="img/${teamMember[key]}">`)
         }
